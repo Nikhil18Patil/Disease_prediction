@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Period Calculator</title>
+    
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style type="text/css">
+    .card {
+			margin: 50px auto;
+			width: 500px;
+			padding: 20px;
+		}
+        h1{
+            text-align:center;
+            margin:2px;
+            font-size:30px;
+            margin-bottom:15px;
+        }
+        label{
+            width:400px;
+            margin-top:5px;
+        }
+        .button1{
+            margin:10px;
+            margin-top:10px;
+            width:400px;
+        }
+
+        select{
+            width:190px;
+        }
+
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+            
+        }
+    
+        main{
+            margin-top:120px;
+        }
+    
+        /* this is form section */
+    
+        form{
+            text-align:center;
+        }
+    
+    
+        .box{
+            height:40px;
+            width:100%;
+            margin:15px;
+        }
+    
+        /*form section end */
+    
+        h2{
+            margin:10px;
+            font-size:10px;
+            margin-top:19px;
+        }
+    
+        p{
+            font-size:30px;
+        }
+    
+        label{
+            font-size:20px;
+        }
+    
+        select{
+            size:25px;
+        }
+    
+        button{
+            font-size:25px;
+            margin-bottom:30px;
+        }
+    
+       footer{
+        height:150px;
+        background-color:gray;
+        text-align:center;
+       }
+    
+       .footer p{
+        text-align:center;
+        font-size:10px;
+        
+    
+       }
+    
+        /* this is nav bar */
+    
+    nav {
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        right: 0;
+        top: 0;
+        font-family: 'Montserrat', sans-serif;
+        padding: 0 5%;
+        height: 90px;
+        background-color: #c0fffb;
+    }
+    nav .logo {
+        float: left;
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        color: black;
+        font-family:serif;
+        font-weight: 10px;
+        size:10px;
+    }
+    
+    
+    nav .links {
+        float: right;
+        padding: 0;
+        margin: 0;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    nav .links li {
+        list-style: none;
+    }
+    nav .links a {
+        display: block;
+        padding: 1em;
+        font-size: 18px;
+        font-weight: bold;
+        color:black;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    nav .links a:hover{
+       color: #17b7a2;
+        
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 500;
+    }
+    #nav-toggle {
+        position: absolute;
+        top: -100px;
+    }
+    nav .icon-burger {
+        display: none;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    nav .icon-burger .line {
+        width: 30px;
+        height: 5px;
+        background-color: #000000;
+        margin: 5px;
+        border-radius: 3px;
+        transition: all .3s ease-in-out;
+    }
+    @media screen and (max-width: 768px) {
+        nav{
+            background-color: rgb(240, 242, 243);
+        }
+        nav .logo {
+            float: none;
+            width: auto;
+            color: rgb(0, 0, 0);
+            justify-content: center;
+        
+        }
+        nav .links {
+            float: none;
+            position: fixed;
+            z-index: 9;
+            left: 0;
+            right: 0;
+            top: 100px;
+            bottom: 100%;
+            width: auto;
+            height: auto;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: rgba(42, 41, 41, 0.8);
+            overflow: hidden;
+            box-sizing: border-box;
+            transition: all .5s ease-in-out;
+        }
+        nav .links a {
+            font-size: 20px;
+            color: white;
+        }
+        nav :checked ~ .links {
+            bottom: 0;
+        }
+        nav .icon-burger {
+            display: block;
+        }
+        nav :checked ~ .icon-burger .line:nth-child(1) {
+            transform: translateY(10px) rotate(225deg);
+        }
+        nav :checked ~ .icon-burger .line:nth-child(3) {
+            transform: translateY(-10px) rotate(-225deg);
+        }
+        nav :checked ~ .icon-burger .line:nth-child(2) {
+            opacity: 0;
+        }
+        
+    }
+
+    /*this is dropdown */
+    .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+      
+      .dropdown .dropbtn {
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color:rgb(24, 124, 255);
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+      
+      .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: ;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+  </style>
+  </head>
+  <body>
+    <nav>
+      <input id="nav-toggle" type="checkbox">
+      <div class="logo"> Dr.Arogyam </div>
+      <ul class="links">
+          <li><a href="{%url 'home'%}">Home</a></li>
+          <li><a href="#Skills">About us</a></li>
+          <li><a href="#Education">Contact us
+          </a></li>
+          
+          <li><div class="dropdown">
+            <button class="dropbtn">Health Calculators
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{%url 'bmi' %}">BMI Calculator</a>
+              <a href="{%url 'cal_calory' %}">Calorie Calculator</a>
+              <a href="{%url 'medical' %}" >Medical Report</a>
+              <a href="{%url 'widal' %}" >Widal Report(Typhoid)</a>
+              <a href="{%url 'period_cal' %}">Period Calculator</a>
+              <a href="{%url 'pregnancy_cal' %}">Pregnancy Calculator</a>
+              <a href="{%url 'sugar' %}">Sugar_report</a>
+              <a href="{%url 'anxiety' %}">Anxiety Screening</a>
+            </div>
+          </div> </li>
+          
+      </ul>
+      <label for="nav-toggle" class="icon-burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+      </label>
+  </nav>
+
+    <main>
+<div class="card">
+    <h1>Period Calculator</h1>
+    <form method="POST">
+      {% csrf_token %}
+      <label for="cycle_length">Enter your menstrual cycle length (in days):</label>
+      <input type="number" name="cycle_length" id="cycle_length" required>
+      <br><br>
+      <input type="submit" value="Calculate">
+    </form>
+
+    {% if period_start_date %}
+      <p>Your next period is estimated to start on {{ period_start_date }}.</p>
+      <p>Your most probable ovulation days are {{ ovulation_day_1 }} and {{ ovulation_day_2 }}.</p>
+    {% endif %}
+</div>
+</main>
+  </body>
+</html>

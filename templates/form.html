@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    {%load static %}
+<head>
+    <title>Disease Predictor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link  href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=M+PLUS+1+Code:wght@200&family=Ysabeau:wght@100&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+<style>
+
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        
+    }
+
+    main{
+        margin-top:90px;
+    }
+
+    /* this is form section */
+
+    form{
+        text-align:center;
+    }
+
+
+    .box{
+        height:40px;
+        width:100%;
+        margin:15px;
+    }
+
+    /*form section end */
+
+    h2{
+        margin:30px;
+        font-size:40px;
+        margin-top:60px;
+    }
+
+    p{
+        font-size:30px;
+    }
+
+    label{
+        font-size:20px;
+    }
+
+    select{
+        size:25px;
+    }
+
+    button{
+        font-size:25px;
+        margin-bottom:30px;
+    }
+
+   footer{
+    height:150px;
+    background-color:gray;
+    text-align:center;
+   }
+
+   .footer p{
+    text-align:center;
+    font-size:10px;
+    
+
+   }
+
+    /* this is nav bar */
+
+nav {
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	right: 0;
+	top: 0;
+	font-family: 'Montserrat', sans-serif;
+	padding: 0 5%;
+	height: 90px;
+	background-color: #c0fffb;
+}
+nav .logo {
+	float: left;
+	width: 40%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 30px;
+	color: black;
+	font-family:serif;
+	font-weight: 10px;
+    size:10px;
+}
+
+
+nav .links {
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 60%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+nav .links li {
+	list-style: none;
+}
+nav .links a {
+	display: block;
+	padding: 1em;
+	font-size: 18px;
+	font-weight: bold;
+	color:black;
+    font-weight: 500;
+	text-decoration: none;
+}
+nav .links a:hover{
+   color: #17b7a2;
+    
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-weight: 500;
+}
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+nav .icon-burger .line {
+	width: 30px;
+	height: 5px;
+	background-color: #000000;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+	nav{
+		background-color: rgb(240, 242, 243);
+	}
+	nav .logo {
+		float: none;
+		width: auto;
+        color: rgb(0, 0, 0);
+		justify-content: center;
+    
+	}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 100px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(42, 41, 41, 0.8);
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+		color: white;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+	
+}
+
+</style>
+
+   
+</head>
+
+<body>
+   
+
+
+
+    {%load static %}
+ 
+
+        <nav>
+            <input id="nav-toggle" type="checkbox">
+            <div class="logo"> Dr.Arogyam </div>
+            <ul class="links">
+                <li><a href="{%url 'home'%}">Home</a></li>
+                <li><a href="#Skills">About us</a></li>
+                <li><a href="#Education">Contact us
+                </a></li>
+                
+                <li><a href="#Projects">Services</a></li>
+                
+            </ul>
+            <label for="nav-toggle" class="icon-burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </label>
+        </nav>
+   
+    <!-- <h1>Disease Predictor</h1> -->
+
+    <main>
+        <form method="post" action="{% url 'result' %}">
+            {% csrf_token %}
+            
+                <h2 class="head1">Symptoms</h2>
+                <p id="result">Select symptoms to predict the disease.</p>
+                <div class="box">
+                <label for="symptom1">Symptom 1:</label>
+                <select id="symptom1" name="symptom1" required>
+                    <option>Select Here</option>
+                    {% for symptom in symptoms %}
+                    <option>{{ symptom.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="box">
+                <label for="symptom2">Symptom 2:</label>
+                <select id="symptom2" name="symptom2" required>
+                    <option>Select Here</option>
+                    {% for symptom in symptoms %}
+                    <option>{{ symptom.name }}</option>
+                    {% endfor %}
+                </select>
+
+            </div>
+            
+            <div class="box">
+                <label for="symptom3">Symptom 3:</label>
+                <select id="symptom3" name="symptom3" required>
+                    <option>Select Here</option>
+                    {% for symptom in symptoms %}
+                    <option>{{ symptom.name }}</option>
+                    {% endfor %}
+                </select>
+
+            </div>
+            
+            
+            <div class="box">
+            
+                <label for="symptom4">Symptom 4:</label>
+                <select id="symptom4" name="symptom4" required>
+                    <option>Select Here</option>
+                    {% for symptom in symptoms %}
+                    <option>{{ symptom.name }}</option>
+                    {% endfor %}
+                </select>
+            
+            </div>
+            
+            <div class="box">
+                <label for="symptom5">Symptom 5:</label>
+                <select id="symptom5" name="symptom5" required>
+                    <option>Select Here</option>
+                    {% for symptom in symptoms %}
+                    <option>{{ symptom.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+                
+                <!-- <p id="result">Select symptoms to predict the disease.</p> -->
+            
+            <div class="btn">
+
+                <button type="submit" name ="message_frm">Submit</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <div class="footer">
+        <p>&copy 2023 Dr. Arogyam. All Rights Reserved.</p>
+        <p>Made With ❤️ In India</p>
+        </div>
+    </footer>
+    <script src='https://widget.lovi.ai/lovi-widget.min.js' lovi-id='YTPh7KAwM4hpgp7Ffw1A3TQ5aP12'></script>
+    </body>
+    </html>

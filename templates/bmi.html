@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BMI Calculator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'static/img/cal_back.jpg' %}">
+	<style type="text/css">
+	
+		/* .card {
+			margin: 50px auto;
+			width: 500px;
+			padding: 20px;
+		} */
+
+		h1 {
+			text-align: center;
+			font-size: 47px;
+			color: #00aa9c;
+			margin-bottom: 46px;
+			margin-top: 34px;
+		}
+
+		h2{
+			text-align:center;
+			font-size:30px;
+			font-style:bold;
+		}
+		
+
+		.container {
+			background-image: url( '/static/img/cal_back.jpg' );
+			background-repeat: no-repeat;
+			background-size: cover;
+			opacity: 1;
+			/* border: 2px solid blue; */
+			/* text-align: center; */
+			background-color: #c0fffb;
+			border-radius: 60px;
+			height: 710px;
+			margin: auto;
+			/* text-align: center; */
+			transition: 0.8s;
+
+		}
+
+
+		.container:hover {
+			box-shadow: 0px 0px 35px #00847d;
+		}
+
+		button {
+			margin-top: 27px;
+			background-color: #00b7a7;
+			border: none;
+			padding: 8px 24px;
+			border-radius: 13px;
+			font-size: 23px;
+			color: rgb(0, 0, 0);
+			font-family: sans-serif;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom: -41px;
+			transition: 0.8s;
+
+		}
+
+		button:hover {
+			background-color: #0080ff;
+			color: rgb(255, 255, 255);
+
+			box-shadow: 0px 0px 31px 12px #03b8a8;
+		}
+
+		.btn {
+			width: 459px;
+			text-align: center;
+			/* border: 2px solid red; */
+			margin: auto;
+			align-items: center;
+			margin-left: 337px;
+		}
+
+		.input-tag {
+			/* border: 2px solid orangered; */
+
+			height: 21px;
+			border-radius: 7px;
+			box-shadow: blue;
+			box-shadow: 2px 2px #888888;
+			float: right;
+		}
+
+
+
+
+
+		label {
+			/* border: 2px solid lawngreen; */
+			font-size: 23px;
+			font-weight: 500;
+		}
+
+		.form-group {
+			margin-bottom: 1rem;
+			text-align: center;
+			/* box-shadow: 2px 2px #888888; */
+		}
+
+		#weight {
+			box-shadow: 3px 3px grey;
+		}
+
+		#height {
+			box-shadow: 3px 3px grey;
+		}
+
+
+		.form-control {
+			/* display: block; */
+			width: 24%;
+			height: 44px;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.6;
+			color: #495057;
+			background-color: #fff;
+			background-clip: padding-box;
+			border: 2px solid #ced4da;
+			border-radius: 0.25rem;
+			transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+			margin: auto;
+			border-radius: 9px;
+		}
+
+		main{
+			margin-top:120px;
+		}
+		img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top:10px;
+		  }
+
+		nav {
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            right: 0;
+            top: 0;
+            font-family: 'Montserrat', sans-serif;
+            padding: 0 5%;
+            height: 90px;
+            background-color: #c0fffb;
+        }
+        nav .logo {
+            float: left;
+            width: 40%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            color: black;
+            font-family:serif;
+            font-weight: 10px;
+            size:10px;
+        }
+        
+        
+        nav .links {
+            float: right;
+            padding: 0;
+            margin: 0;
+            width: 60%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        nav .links li {
+            list-style: none;
+        }
+        nav .links a {
+            display: block;
+            padding: 1em;
+            font-size: 18px;
+            font-weight: bold;
+            color:black;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        nav .links a:hover{
+           color: #17b7a2;
+            
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 500;
+        }
+        #nav-toggle {
+            position: absolute;
+            top: -100px;
+        }
+        nav .icon-burger {
+            display: none;
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        nav .icon-burger .line {
+            width: 30px;
+            height: 5px;
+            background-color: #000000;
+            margin: 5px;
+            border-radius: 3px;
+            transition: all .3s ease-in-out;
+        }
+        @media screen and (max-width: 768px) {
+            nav{
+                background-color: rgb(240, 242, 243);
+            }
+            nav .logo {
+                float: none;
+                width: auto;
+                color: rgb(0, 0, 0);
+                justify-content: center;
+            
+            }
+            nav .links {
+                float: none;
+                position: fixed;
+                z-index: 9;
+                left: 0;
+                right: 0;
+                top: 100px;
+                bottom: 100%;
+                width: auto;
+                height: auto;
+                flex-direction: column;
+                justify-content: space-evenly;
+                background-color: rgba(42, 41, 41, 0.8);
+                overflow: hidden;
+                box-sizing: border-box;
+                transition: all .5s ease-in-out;
+            }
+            nav .links a {
+                font-size: 20px;
+                color: white;
+            }
+            nav :checked ~ .links {
+                bottom: 0;
+            }
+            nav .icon-burger {
+                display: block;
+            }
+            nav :checked ~ .icon-burger .line:nth-child(1) {
+                transform: translateY(10px) rotate(225deg);
+            }
+            nav :checked ~ .icon-burger .line:nth-child(3) {
+                transform: translateY(-10px) rotate(-225deg);
+            }
+            nav :checked ~ .icon-burger .line:nth-child(2) {
+                opacity: 0;
+            }
+            
+        }
+    
+        /*this is dropdown */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+          }
+          
+          .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color:rgb(24, 124, 255);
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+          }
+          
+          .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: ;
+          }
+          
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          
+          .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+          }
+          
+          .dropdown-content a:hover {
+            background-color: #ddd;
+          }
+          
+          .dropdown:hover .dropdown-content {
+            display: block;
+          }
+    </style>
+</head>
+
+<body>
+	{%load static%}
+
+    <nav>
+        <input id="nav-toggle" type="checkbox">
+        <div class="logo"> Dr.Arogyam </div>
+        <ul class="links">
+            <li><a href="{%url 'home'%}">Home</a></li>
+            <li><a href="#Skills">About us</a></li>
+            <li><a href="#Education">Contact us
+            </a></li>
+            
+            <li><div class="dropdown">
+                <button class="dropbtn">Health Calculators
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="{%url 'bmi' %}">BMI Calculator</a>
+                  <a href="{%url 'cal_calory' %}">Calorie Calculator</a>
+                  <a href="{%url 'medical' %}" >Medical Report</a>
+                  <a href="{%url 'widal' %}" >Widal Report(Typhoid)</a>
+                  <a href="{%url 'period_cal' %}">Period Calculator</a>
+                  <a href="{%url 'pregnancy_cal' %}">Pregnancy Calculator</a>
+                  <a href="{%url 'sugar' %}">Sugar_report</a>
+                  <a href="{%url 'anxiety' %}">Anxiety Screening</a>
+                </div>
+              </div> </li>
+            
+        </ul>
+        <label for="nav-toggle" class="icon-burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+    </nav>
+
+	<main>
+	<h1>BMI Calculator</h1>
+	<div class="container">
+		<!-- <div class="card"> -->
+		<form method="post">
+			{% csrf_token %}
+			<div class="form-group">
+				<label for="weight">Weight (kg)</label>
+				<input type="number" step="0.01" class="form-control" id="weight" name="weight" required>
+			</div>
+			<div class="form-group">
+				<label for="height">Height (m)</label>
+				<input type="number" step="0.01" class="form-control" id="height" name="height" required>
+			</div>
+			<div class="btn">
+
+				<button type="submit" class="btn-primary">Calculate BMI</button>
+			</div>
+		</form>
+		{% if bmi %}
+		<hr>
+		<h2 >Your BMI is: {{ bmi }}</h2>
+		{% endif %}
+		<!-- </div> -->
+
+		<img src="{%static 'img/bmi.jpg' %}" alt="showing image" style="width:50%;">
+	</div>
+</main>
+</body>
+
+</html>

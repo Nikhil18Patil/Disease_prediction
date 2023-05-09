@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anxiety Screening Tool</title>
+</head>
+<body>
+
+<main>
+	<h1>Anxiety Screening Tool</h1>
+	<form method="POST" action="{% url 'anxiety' %}">
+		{% csrf_token %}
+		<h2>Please answer the following questions:</h2>
+		<p>
+			<label>1. Do you feel anxious or nervous?</label><br>
+			<input type="radio" name="q1" value="0">Not at all<br>
+			<input type="radio" name="q1" value="1">Occasionally<br>
+			<input type="radio" name="q1" value="2">Sometimes<br>
+			<input type="radio" name="q1" value="3">Frequently<br>
+			<input type="radio" name="q1" value="4">Almost always<br>
+		</p>
+		<p>
+			<label>2. Do you worry about things a lot more than you think you should?</label><br>
+			<input type="radio" name="q2" value="0">Not at all<br>
+			<input type="radio" name="q2" value="1">Occasionally<br>
+			<input type="radio" name="q2" value="2">Sometimes<br>
+			<input type="radio" name="q2" value="3">Frequently<br>
+			<input type="radio" name="q2" value="4">Almost always<br>
+		</p>
+		<p>
+			<label>3. Do you ever feel like you're on edge, or find it hard to relax?</label><br>
+			<input type="radio" name="q3" value="0">Not at all<br>
+			<input type="radio" name="q3" value="1">Occasionally<br>
+			<input type="radio" name="q3" value="2">Sometimes<br>
+			<input type="radio" name="q3" value="3">Frequently<br>
+			<input type="radio" name="q3" value="4">Almost always<br>
+		</p>
+		<p>
+			<label>4. Do you avoid situations that make you feel anxious, or do you have trouble facing your fears?</label><br>
+			<input type="radio" name="q4" value="0">Not at all<br>
+			<input type="radio" name="q4" value="1">Occasionally<br>
+			<input type="radio" name="q4" value="2">Sometimes<br>
+			<input type="radio" name="q4" value="3">Frequently<br>
+			<input type="radio" name="q4" value="4">Almost always<br>
+		</p>
+        <p>
+			<label>5. Do you ever feel like you're having a panic attack, or experience physical symptoms like heart palpitations?</label><br>
+			<input type="radio" name="q5" value="0">Not at all<br>
+			<input type="radio" name="q5" value="1">Occasionally<br>
+			<input type="radio" name="q5" value="2">Sometimes<br>
+			<input type="radio" name="q5" value="3">Frequently<br>
+			<input type="radio" name="q5" value="4">Almost always<br>
+		</p>
+        <button type="submit" class="btn btn-primary">Calculate </button>
+
+  <h1> your score is {{total_score}} and  the axiety level is : {{anxiety_level}} </h1>
+
+    </form>
+</main>
+</body>
+</html>

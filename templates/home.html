@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen and (max-width: 1170px)" href="static/css/phone.css">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #c0fffb;
+        }
+
+        header {}
+
+        .navbar {
+            display: flex;
+            /* background-color: #f2f2f2; */
+
+            overflow: hidden;
+
+            font-family: Arial, sans-serif;
+
+            /* border-bottom: 2px solid #ddd; */
+
+            height: 87px;
+
+
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            width: 300px;
+            /* border: 2px solid blue; */
+        }
+
+        .logo img {
+            height: 231px;
+            padding-left: 30px;
+            margin-left: 34px;
+        }
+
+
+        .navul {
+            /* border: 2px solid red; */
+            display: flex;
+            width: 700px;
+            margin-left: 7px px;
+
+
+        }
+
+        .navul li {
+            list-style: none;
+            margin-left: 55px;
+
+            align-items: center;
+            justify-content: center;
+            display: flex;
+
+        }
+
+        .navul li a {
+            text-decoration: none;
+            color: rgb(21, 222, 222);
+        }
+        .navul li a:hover{
+            text-decoration:underline;
+        
+            color: rgb(0, 134, 134);
+        }
+
+        .btn {
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: center;
+            top: 25px;
+
+        }
+
+        .btn button {
+            border: none;
+            margin-right: 19px;
+            background-color: rgb(24, 124, 255);
+            padding: 9px 27px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 23px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: 1s;
+        }
+
+        .btn button:hover {
+            background-color: rgb(0, 85, 255);
+
+        }
+
+        .btn a {
+
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* main */
+        .container {
+
+            background-image: url(static/img/backgroundimg.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* max-width: 1459px; */
+            height: 660px;
+            border-radius: 37px;
+            width: 1230px;
+            margin: 3px auto;
+            padding: 4px 3px;
+            display: flex;
+            align-items: center;
+
+
+        }
+
+
+        /* .container img {
+
+            max-width: 100%;
+            height: auto;
+            width: 658px;
+        } */
+
+
+        .container2 {
+            background-color: #f8ffff;
+            width: 82%;
+            height: 158px;
+            border-radius: 37px;
+            margin: 3px auto;
+            padding: 4px 3px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 749px;
+            z-index: 2;
+            margin-left: 149px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+
+
+
+        .text-container {
+            height: 368px;
+            /* border: 2px solid black; */
+            color: white;
+            margin-right: 153px;
+            width: 664px;
+            margin-left: 36px;
+            margin-top: -86px;
+            /* Adjust this value to create spacing between the text and image */
+        }
+
+        .text-container h2 {
+            font-size: 70px;
+            margin-bottom: 32px;
+        }
+
+        .text-container img {
+
+            margin-top: 67px;
+        }
+
+        .btn2 {
+            display: flex;
+            justify-content: space-between;
+
+            margin: 42px 106px;
+        }
+
+        .btn2 button {
+            border: none;
+            margin-right: 19px;
+            background-color: rgb(24, 124, 255);
+            padding: 9px 27px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 23px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: 1s;
+            z-index: 1;
+        }
+
+        .btn2 button:hover {
+            background-color: rgb(0, 85, 255);
+
+        }
+
+        .btn2 button a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .learn-link {
+            border: 2px solid white;
+            text-decoration: none;
+            color: white;
+            border-radius: 19px;
+            padding: 6px 26px;
+            font-size: 18px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: 1s;
+            z-index: 1;
+
+        }
+
+        .learn-link:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .container2 ul {
+            display: flex;
+        }
+
+        .container2 li {
+            list-style: none;
+        }
+
+        .container2 img {
+            width: 100px;
+            margin: 29px 101px;
+        }
+
+        /* @media (min-width:350px) and(max-width:1339px) {
+            .container2 ul {
+                display: none;
+            }
+
+
+        }
+
+        @media (min-width:872px) and(max-width:1339px) {
+            .container img {
+                width: 200px;
+               
+            }
+
+
+        } */
+
+        .container3 {
+            /* border: 2px solid red; */
+            margin-top: 83px;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+
+        }
+
+        .container3 img {
+            width: 402px;
+        }
+
+        .cont3-text {
+            /* border: 2px solid blue; */
+            text-align: center;
+            width: 64%;
+            height: 56%;
+            margin: auto;
+            background-color: #00756f;
+            border-radius: 48px;
+            color: white;
+            transition: 0.8s;
+
+        }
+
+        .cont3-text:hover {
+            background-color: #00a59d
+        }
+
+        .cont3-text h2 {
+            font-size: 65px;
+            font-family: sans-serif;
+
+        }
+
+        .cont3-text p {
+            margin-top: 9px;
+            font-family: sans-serif;
+            /* margin-bottom: 0px; */
+            padding: 14px 56px;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .container3 {
+            max-width: 800px;
+            /* Set the width of the container */
+            margin: 0 auto;
+        }
+
+        .heart {
+            color: red;
+            font-size: 14px;
+        }
+
+        .sponsors-container {
+            margin-top:  65px;
+            text-align: center;
+        }
+
+        .sponsors-container h2 {
+            font-size: 50px;
+            color: #17b7a2;
+            margin-bottom: 65px;
+
+
+        }
+
+        .sponsors-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .sponsor {
+            width: 30%;
+    height: 211px;
+        }
+
+        .sponsor img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #map-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 500px;
+        }
+
+        footer {
+            background-color: #17b7a2;
+            color: #FFFFFF;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #map-container {
+            background-color: #007a6a;
+        }
+
+        #map-container h2 {
+            font-size: 44px;
+            margin-top: 88px;
+        }
+        .contentsection {
+            /* border: 2px solid black; */
+            width: 98%;
+            height: 660px;
+            text-align: center;
+            /* background-color: #67ebff; */
+            border-radius: 23px;
+            margin: 3px auto;
+
+        }
+
+        .contentsection h3 {
+            margin: auto;
+            /* border: 2px solid red; */
+            width: 50%;
+            height: 101px;
+            text-align: center;
+            font-size: 29px;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 13px;
+            
+
+        }
+
+        .contentsection p {
+            /* border: 2px solid rgb(0, 81, 255); */
+            margin: auto;
+            width: 79%;
+            height: 101px;
+            text-align: center;
+            font-size: 19px;
+            overflow: hidden;
+        }
+        .contentsection img{
+            width: 964px;
+    height: 452px;
+
+        }
+
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+          }
+          
+          .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color:rgb(24, 124, 255);
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+          }
+          
+          .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: ;
+          }
+          
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          
+          .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+          }
+          
+          .dropdown-content a:hover {
+            background-color: #c0fffb;
+          }
+          
+          .dropdown:hover .dropdown-content {
+            display: block;
+          }
+
+
+
+    </style>
+</head>
+
+<body>
+    {%load static%}
+ 
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="static/img/DR_Roberts_Health_Clinic__1_-removebg-preview.png" alt="">
+            </div>
+
+            <ul class="navul">
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><div class="dropdown">
+                    <button class="dropbtn">Health Calculators
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="{%url 'bmi' %}">BMI Calculator</a>
+                      <a href="{%url 'cal_calory' %}">Calorie Calculator</a>
+                      <a href="{%url 'medical' %}" >Medical Report</a>
+                      <a href="{%url 'widal' %}" >Widal Report(Typhoid)</a>
+                      <a href="{%url 'period_cal' %}">Period Calculator</a>
+                      <a href="{%url 'pregnancy_cal' %}">Pregnancy Calculator</a>
+                      <a href="{%url 'sugar' %}">Sugar_report</a>
+                      <a href="{%url 'anxiety' %}">Anxiety Screening</a>
+                    </div>
+                  </div> </li>
+            </ul>
+
+            <div class="btn">
+                <button><a href="{%url 'form' %}">Predict your disease</a></button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main" id="mainid">
+
+        <div class="container">
+            <div class="text-container">
+                <h2>Predict diseases from entered symptoms.</h2>
+                <p>With our disease predictor website, you can easily input your symptoms and receive potential
+                    diagnoses. Our tool helps identify potential health concerns, allowing for prompt and accurate
+                    treatment. Give it a try today.</p>
+
+                <div class="btn2">
+                    <button><a href="{% url 'form' %}">Predict your disease</a></button>
+                    <a class="learn-link" href="">Learn More</a>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div class="contentsection">
+
+            <h3>Revolutionary technology predicts illnesses based on symptoms, enabling personalized and proactive healthcare interventions.</h3>
+            <p>Cutting-edge technology utilizes advanced algorithms and AI to diagnose illnesses accurately and efficiently, allowing for personalized and proactive healthcare interventions based on symptom analysis and pattern recognition.</p>
+           <!--
+            <div class="vid">
+                <video width="320" height="240" controls>
+                    <source src="{% static 'img/introvideo.mp4' %}" type="video/mp4">
+                    
+                  </video>
+
+             </div> -->
+                <img src="{% static 'img/Untitled design (2).png' %} " alt="">
+        </div>
+        <div class="sponsors-container">
+            <h2>Our Sponsors</h2>
+            <div class="sponsors-list">
+                <div class="sponsor">
+                    <img src="{% static 'img/RGPV.png' %}" alt="Sponsor 1">
+                </div>
+                <div class="sponsor">
+                    <img src="{% static 'img/RGPV.png' %}" alt="Sponsor 2">
+                </div>
+                <div class="sponsor">
+                    <img src="{% static 'img/RGPV.png' %}" alt="Sponsor 3">
+                </div>
+            </div>
+        </div>
+        
+<!--
+        <div id="map-container">
+            <h2>Find a Doctor Near You</h2>
+            <div id="map"></div>
+        </div>
+-->
+        <!-- <div class="container2">
+            <ul>
+                <a href="https://instagram.com"><img src="img/instagram.png" alt=""></a>>
+                <a href="https://linkedin.com"><img src="img/LinkedIn_logo_initials.png" alt=""></a>
+                <a href="https://twitter.com"><img src="img/twitter.png" alt=""></a>
+                <a href="https://whatsapp.com"><img src="img/whatsapp.png" alt=""></a>
+            </ul>
+        </div>
+
+        <section class="sectionnews">
+
+        </section>
+
+        <div class="container3">
+            <img src="img/health-01.png" alt="image">
+            <div class="cont3-text">
+                <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ab enim sunt debitis laborum quod
+                    soluta sit aliquid eum? Quae nisi commodi deserunt voluptatem iure Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Blanditiis, soluta?</p>
+            </div>
+        </div>
+
+    </div> -->
+
+        <footer>
+            <div class="container4">
+                <p>&copy; Dr. Arogyam. All rights reserved.</p>
+                <p>Made with <span class="heart">&#10084;</span> in India</p>
+            </div>
+        </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Arogyam Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="body.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=M+PLUS+1+Code:wght@200&family=Ysabeau:wght@100&display=swap"
+        rel="stylesheet">
+
+    <title>Dark Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #026459e6;
+
+           
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+            height: 80px;
+
+        }
+
+
+
+        .mid a {
+            font-size: 18px;
+            font-family: 'Ysabeau', sans-serif;
+            margin: 10px;
+        }
+
+        /* border: 2px solid red;
+    border-radius: 6px;
+    padding: 4px; */
+
+
+        .right {
+            margin-right: 43px;
+            display: flex;
+        }
+
+        .logo {
+
+            display: flex;
+            align-items: center;
+        }
+
+
+        .logo img {
+            /* height: 50px;
+            filter: invert(1); */
+            width: 203px;
+            cursor: pointer;
+        }
+
+        #company-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        nav {
+            /* position: fixed; */
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            margin-top: -6px;
+            margin-left: -423px;
+        }
+
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        .nav-link {
+            color: #333333;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin: 20px;
+        }
+
+        .nav-link:hover {
+            color: #009783;
+            text-decoration: underline;
+        }
+
+        .check-now {
+            display: flex;
+            align-items: center;
+        }
+
+        #check-now-button {
+            background-color: #17b7a2;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 9px 13px;
+            transition: background-color 0.3s ease;
+            margin: -9px 6px;
+            transition: 1s;
+
+        }
+
+
+        #check-now-button:hover {
+            background-color: #0060f9;
+            cursor: pointer;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 50px;
+            margin-top: 50px;
+            color: #fff9f9;
+            font-style: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        form {
+            width: 350px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #888;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 14px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #17b7a2;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+
+        button:hover {
+            background-color: #005299;
+        }
+
+        .container {
+            padding: 16px;
+        }
+        .container a{
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 15px;
+            font-size: 16px;
+        }
+
+        span.psw a{
+            color: #0060f9;
+            font-size: 15px;
+           
+        }
+
+        a:hover {
+            color: #005299;
+            text-decoration: underline;
+        }
+
+        .cancelbtn {
+            background-color: #f44336;
+            color: #fff;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .cancelbtn:hover {
+            background-color: #d32f2f;
+        }
+
+      
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            height: 80px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div id="left">
+            <div class="logo">
+                <img src="img/DR_Roberts_Health_Clinic__1_-removebg-preview.png" alt="Company Logo">
+                <!-- <h2 id="company-name">Arogyam.ai</h2> -->
+            </div>
+        </div>
+
+        <div class="mid">
+            <nav>
+                <ul>
+                    <li><a href="home.html" class="nav-link" id="home-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link" id="about-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link" id="contact-link">Contact Us</a></li>
+                    <li><a href="services.html" class="nav-link" id="services-link">Services</a></li>
+                    <li><a href="demo.html" class="nav-link" id="demo-link">Demo</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="right">
+            <div class="check-now">
+                <a href="login.html"><button id="check-now-button" class="button">Login</button></a>
+            </div>
+            <div class="check-now">
+                <a href="signup.html"><button id="check-now-button" class="button">Sign Up</button></a>
+            </div>
+        </div>
+    </header>
+    <h2>Arogyam SignUp Page</h2> <br>
+    <form action="" method="POST">
+        <div class="container">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <button type="submit">SignUp</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn"><a href="home.html">Cancel</a></button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</body>
+
+</html>
